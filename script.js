@@ -1,9 +1,7 @@
-document.getElementById('searchBar').addEventListener('keyup', function() {
-    let filter = this.value.toLowerCase();
-    let games = document.querySelectorAll('.game');
-
-    games.forEach(game => {
-        let title = game.querySelector('.game-overlay h2').innerText.toLowerCase();
-        game.style.display = title.includes(filter) ? 'block' : 'none';
+document.querySelectorAll('.game').forEach(game => {
+    game.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {  // Verifica se é um dispositivo móvel
+            this.classList.toggle('clicked');  // Alterna a classe 'clicked' para exibir o botão
+        }
     });
 });
