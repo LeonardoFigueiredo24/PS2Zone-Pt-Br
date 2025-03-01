@@ -5,3 +5,17 @@ document.querySelectorAll('.game').forEach(game => {
         }
     });
 });
+
+function filterGames() {
+    var searchQuery = document.getElementById("searchBar").value.toLowerCase();
+    var games = document.querySelectorAll(".game");
+
+    games.forEach(function(game) {
+        var title = game.querySelector("h2").textContent.toLowerCase();
+        if (title.includes(searchQuery)) {
+            game.style.display = "block";
+        } else {
+            game.style.display = "none";
+        }
+    });
+}

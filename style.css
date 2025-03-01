@@ -11,6 +11,7 @@ body {
     text-align: center;
     background-color: #1a1a1a;
     color: #fff;
+    line-height: 1.6;
 }
 
 /* Cabeçalho */
@@ -20,20 +21,40 @@ header {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-    font-size: 24px;
-    font-weight: bold;
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Barra de pesquisa */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff6f61;
+}
+
+.search-container {
+    position: relative;
+    margin-top: 10px;
+}
+
 #searchBar {
     width: 80%;
     max-width: 350px;
-    padding: 10px;
+    padding: 10px 40px 10px 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 16px;
-    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.fa-search {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6f61;
+    cursor: pointer;
 }
 
 /* Container dos jogos */
@@ -42,6 +63,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
+    gap: 20px;
 }
 
 /* Card de cada jogo */
@@ -50,16 +72,16 @@ h1 {
     background-position: center;
     width: 280px;
     height: 400px;
-    margin: 15px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .game:hover {
     transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Efeito escuro ao passar o mouse */
@@ -97,18 +119,18 @@ h1 {
 
 /* Botão de download */
 .download-btn {
-    display: none;  /* Escondido por padrão */
+    display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
-    background: #28a745;
+    background: #ff6f61;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     transition: background 0.3s ease-in-out;
 }
 
 .download-btn:hover {
-    background: #218838;
+    background: #e65a50;
 }
 
 /* Rodapé */
@@ -120,28 +142,33 @@ footer {
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .qr-code {
-    width: 74px;  /* Define o tamanho do ícone */
-    height: 74px; /* Mantém proporção */
-    position: fixed; /* Fixa a posição na tela */
-    bottom: 20px; /* Distância da parte inferior */
-    right: 20px; /* Distância da parte direita */
-    cursor: pointer; /* Muda o cursor para indicar clique */
-    transition: transform 0.3s ease-in-out; /* Adiciona efeito suave */
+    width: 74px;
+    height: 74px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 .qr-code:hover {
-    transform: scale(1.1); /* Aumenta levemente o tamanho ao passar o mouse */
+    transform: scale(1.1);
 }
 
 /* Estilo responsivo para celulares */
 @media (max-width: 768px) {
     .game .download-btn {
-        display: none;  /* Escondido inicialmente */
+        display: none;
     }
 
     .game.clicked .download-btn {
-        display: inline-block;  /* Exibe o botão quando a imagem for clicada */
+        display: inline-block;
     }
 }
 

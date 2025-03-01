@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PS2Zone Pt-Br</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>PS2Zone Pt-Br</h1>
-        <input type="text" id="searchBar" placeholder="Pesquisar jogos..." oninput="filterGames()">
+        <div class="header-content">
+            <h1>PS2Zone Pt-Br</h1>
+            <div class="search-container">
+                <input type="text" id="searchBar" placeholder="Pesquisar jogos..." oninput="filterGames()">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
     </header>
 
     <main id="gameList">
@@ -896,33 +902,15 @@
     </main>
 
     <footer>
-        <p>&copy; Criador Leonardo</p>
-        <p>&copy; 2025 - Site de Downloads PS2 ISO</p>
-        <a href="https://www.instagram.com/leonardofig24/" target="_blank">
-            <img src="img/leonardofig24_qr.png" alt="QR Code Instagram" class="qr-code">
-        </a>
+        <div class="footer-content">
+            <p>&copy; Criador Leonardo</p>
+            <p>&copy; 2025 - Site de Downloads PS2 ISO</p>
+            <a href="https://www.instagram.com/leonardofig24/" target="_blank">
+                <img src="img/leonardofig24_qr.png" alt="QR Code Instagram" class="qr-code">
+            </a>
+        </div>
     </footer>
 
-    <script>
-        function filterGames() {
-            var searchQuery = document.getElementById("searchBar").value.toLowerCase();
-            var games = document.querySelectorAll(".game");
-
-            games.forEach(function(game) {
-                var title = game.querySelector("h2").textContent.toLowerCase();
-                if (title.includes(searchQuery)) {
-                    game.style.display = "block";
-                } else {
-                    game.style.display = "none";
-                }
-            });
-        }
-
-        function toggleOverlay(gameElement) {
-            if (window.innerWidth <= 768) {
-                gameElement.classList.toggle('clicked');
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
